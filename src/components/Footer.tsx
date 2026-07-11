@@ -2,12 +2,18 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { siteConfig } from "@/lib/site-config";
 
-const footerLinks = [
+const mainLinks = [
   { href: "/", label: "Главная" },
   { href: "/about", label: "О Майе" },
   { href: "/lectures", label: "Лекции" },
   { href: "/materials", label: "Методички" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contacts", label: "Контакты" },
+];
+
+const legalLinks = [
+  { href: "/privacy", label: "Политика конфиденциальности" },
+  { href: "/terms", label: "Условия использования" },
   { href: "/disclaimer", label: "Медицинский дисклеймер" },
 ];
 
@@ -23,7 +29,15 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-col gap-2 text-sm">
-          {footerLinks.map((item) => (
+          {mainLinks.map((item) => (
+            <Link key={item.href} href={item.href} className="transition-colors hover:text-gold">
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <nav className="flex flex-col gap-2 text-sm">
+          {legalLinks.map((item) => (
             <Link key={item.href} href={item.href} className="transition-colors hover:text-gold">
               {item.label}
             </Link>

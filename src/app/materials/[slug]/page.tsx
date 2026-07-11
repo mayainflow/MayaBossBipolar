@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { MaterialCover } from "@/components/MaterialCover";
+import { LeadMagnetForm } from "@/components/forms/LeadMagnetForm";
 import { getMaterial, materials } from "@/lib/materials";
 
 export function generateStaticParams() {
@@ -20,6 +21,7 @@ export async function generateMetadata({
 
   return {
     title: material.title,
+    description: material.description,
     alternates: { canonical: `/materials/${material.slug}` },
     openGraph: { title: `${material.title} — Я Босс Моей Биполярки` },
   };
@@ -31,6 +33,7 @@ export default async function MaterialPage({ params }: { params: Promise<{ slug:
   if (!material) notFound();
 
   const coverFile = material.file.replace(/\.pdf$/i, ".jpg");
+  const priceLabel = material.kind === "free" ? "Бесплатно" : `${material.price} ₪`;
 
   return (
     <Container className="py-16 sm:py-24">
@@ -42,7 +45,12 @@ export default async function MaterialPage({ params }: { params: Promise<{ slug:
             {material.title}
           </h1>
           <p className="mt-2 text-sm text-ink-soft">
-            {material.pages} {material.pages === 1 ? "страница" : "страницы"} · стоимость уточняется
+            {material.pages} {material.pages === 1 ? "страница" : "страницы"} ·{" "}
+            <span className="font-medium text-midnight">{priceLabel}</span>
+          </p>
+          <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">{material.description}</p>
+          <p className="mt-2 text-sm text-ink-soft">
+            <span className="font-medium text-ink">Для кого:</span> {material.audience}
           </p>
 
           <div className="mt-8">
@@ -59,9 +67,13 @@ export default async function MaterialPage({ params }: { params: Promise<{ slug:
             </ul>
           </div>
 
-          <Button href="/contacts" className="mt-10">
-            Узнать, как получить
-          </Button>
+          <div className="mt-10 max-w-sm">
+            {material.kind === "free" ? (
+              <LeadMagnetForm slug={material.slug} />
+            ) : (
+              <Button href="/contacts">Узнать, как получить</Button>
+            )}
+          </div>
         </div>
       </div>
     </Container>

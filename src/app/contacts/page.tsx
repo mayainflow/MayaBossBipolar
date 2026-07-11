@@ -35,6 +35,11 @@ export default function ContactsPage() {
                 Instagram
               </a>
             )}
+            {siteConfig.social.youtube && (
+              <a href={siteConfig.social.youtube} className="hover:text-midnight">
+                YouTube
+              </a>
+            )}
           </div>
         </div>
 

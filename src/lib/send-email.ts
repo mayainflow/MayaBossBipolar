@@ -1,12 +1,15 @@
 // Тонкая обёртка над Resend HTTP API — без SDK, чтобы не тянуть лишнюю
 // зависимость, пока провайдер не подтверждён окончательно.
-// Требует env: RESEND_API_KEY, CONTACT_TO_EMAIL. Без них считается,
-// что приём писем ещё не настроен, и вызывающий код должен вернуть
-// клиенту стандартное сообщение об ошибке (SITE_PRD.md, раздел 22).
+// Требует env RESEND_API_KEY (нет своего Resend-аккаунта — письма не уходят,
+// вызывающий код должен вернуть клиенту стандартное сообщение об ошибке,
+// SITE_PRD.md раздел 22). CONTACT_TO_EMAIL можно переопределить в env,
+// по умолчанию — рабочий email из CONTENT_MASTER.md.
+
+import { siteConfig } from "./site-config";
 
 export async function sendEmail(subject: string, text: string): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL;
+  const toEmail = process.env.CONTACT_TO_EMAIL || siteConfig.contactEmail;
 
   if (!apiKey || !toEmail) {
     return false;

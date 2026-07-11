@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Container } from "./Container";
 
-// Блог и FAQ пока не в меню — по CLAUDE.md/CONTENT_MASTER.md для них ещё
-// нет утверждённого контента, публиковать разделы без него нельзя.
+// Блог пока не в меню — по CLAUDE.md/CONTENT_MASTER.md для него ещё нет
+// утверждённого контента, публиковать раздел без него нельзя.
 const navItems = [
   { href: "/", label: "Главная" },
   { href: "/about", label: "О Майе" },
   { href: "/lectures", label: "Лекции" },
   { href: "/materials", label: "Методички" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contacts", label: "Контакты" },
 ];
 

@@ -52,6 +52,9 @@ export default function AboutPage() {
 
           <div className="mt-12 flex flex-wrap gap-4">
             <Button href="/lectures">Лекции Майи</Button>
+            <Button href="/materials" variant="secondary">
+              Методички
+            </Button>
             <Button href="/contacts" variant="secondary">
               Связаться
             </Button>
@@ -59,10 +62,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <PhotoFrame filename="tattoo_symbol.jpg" alt="Тату Майи — символ двух полюсов" />
           <PhotoFrame filename="lecture_offline.jpg" alt="Майя проводит офлайн-лекцию" />
-          <PhotoFrame filename="clown_nursing_home.jpg" alt="Майя в образе больничной клоунессы" />
-          <PhotoFrame filename="award.jpg" alt="Майя получает благодарность за проект" />
         </div>
       </div>
     </Container>

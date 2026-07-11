@@ -34,8 +34,8 @@ export default function LecturesPage() {
         </p>
 
         <PhotoFrame
-          filename="lecture_presentation.jpg"
-          alt="Майя выступает с презентацией"
+          filename="lecture_offline.jpg"
+          alt="Майя проводит лекцию"
           className="mt-10 aspect-video"
         />
 
@@ -72,11 +72,6 @@ export default function LecturesPage() {
           </div>
         </div>
 
-        <PhotoFrame
-          filename="lecture_offline_2.jpg"
-          alt="Участники слушают лекцию Майи"
-          className="mt-12 aspect-video"
-        />
       </Container>
 
       <div className="bg-paper-alt">

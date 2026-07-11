@@ -1,14 +1,12 @@
-// Единое место для данных, которых нет в SITE_PRD.md/CONTENT_MASTER.md
-// (рабочий email, соцсети). Пока не заполнено — UI не показывает
-// эти пункты, чтобы не публиковать выдуманные контакты.
+// Единое место для контактных данных проекта (CONTENT_MASTER.md, раздел «Контакты»).
 
 export const siteConfig = {
   name: "Я Босс Моей Биполярки",
   author: "Майя Штейнберг",
-  contactEmail: "", // TODO: заполнить рабочим email проекта
+  contactEmail: "maya.steinberg70@gmail.com",
   social: {
-    telegram: "", // TODO: ссылка на Telegram
-    instagram: "", // TODO: ссылка на Instagram
-    youtube: "", // TODO: ссылка на YouTube (если есть)
+    telegram: "https://t.me/mayabossbipolar",
+    instagram: "", // TODO: ожидает ссылки (CONTENT_MASTER.md)
+    youtube: "https://youtube.com/@maya.steinberg70steinbergm88",
   },
 };
