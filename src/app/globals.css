@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/*
+  Палитра — черновой дизайн-дефолт по SITE_PRD.md, раздел 9
+  ("Два полюса. Одна я."). Точные hex не финальны — собраны на глаз
+  с аватара/обложки, при появлении официального брендбука уточнить пипеткой.
+*/
+:root {
+  --color-paper: #faf6f0;
+  --color-paper-alt: #f1e9dd;
+  --color-ink: #1a1a22;
+  --color-ink-soft: #4a4a55;
+
+  --color-midnight: #12102e;
+  --color-midnight-2: #241f5e;
+  --color-frost: #b9d6f2;
+
+  --color-gold: #f0a93e;
+  --color-amber-deep: #d97b29;
+  --color-coral: #ff6f91;
+  --color-sunset: #ff8c42;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-alt: var(--color-paper-alt);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+
+  --color-midnight: var(--color-midnight);
+  --color-midnight-2: var(--color-midnight-2);
+  --color-frost: var(--color-frost);
+
+  --color-gold: var(--color-gold);
+  --color-amber-deep: var(--color-amber-deep);
+  --color-coral: var(--color-coral);
+  --color-sunset: var(--color-sunset);
+
+  --font-sans: var(--font-inter);
+  --font-script: var(--font-script);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
