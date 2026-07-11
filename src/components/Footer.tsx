@@ -6,6 +6,7 @@ const footerLinks = [
   { href: "/", label: "Главная" },
   { href: "/about", label: "О Майе" },
   { href: "/lectures", label: "Лекции" },
+  { href: "/materials", label: "Методички" },
   { href: "/contacts", label: "Контакты" },
   { href: "/disclaimer", label: "Медицинский дисклеймер" },
 ];

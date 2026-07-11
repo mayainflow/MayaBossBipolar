@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { PhotoFrame } from "@/components/PhotoFrame";
+import { MaterialCard } from "@/components/MaterialCard";
+import { materials } from "@/lib/materials";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -97,6 +99,24 @@ export default function Home() {
           />
         </div>
       </Container>
+
+      {/* Экран 5 — Методички */}
+      <div className="bg-paper-alt">
+        <Container className="py-16 sm:py-24">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">Методички</h2>
+          <p className="mt-4 max-w-lg leading-relaxed text-ink-soft">
+            Короткие практические материалы — то, что реально помогает день за днём.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {materials.map((material) => (
+              <MaterialCard key={material.slug} material={material} />
+            ))}
+          </div>
+          <Button href="/materials" variant="secondary" className="mt-8">
+            Посмотреть методички
+          </Button>
+        </Container>
+      </div>
 
       {/* Экран 6 — Отзывы */}
       <div className="bg-midnight text-paper">
