@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
-import { Button } from "@/components/Button";
 import { MaterialCover } from "@/components/MaterialCover";
 import { LeadMagnetForm } from "@/components/forms/LeadMagnetForm";
+import { PurchaseRequestForm } from "@/components/forms/PurchaseRequestForm";
 import { getMaterial, materials } from "@/lib/materials";
 
 export function generateStaticParams() {
@@ -71,7 +71,7 @@ export default async function MaterialPage({ params }: { params: Promise<{ slug:
             {material.kind === "free" ? (
               <LeadMagnetForm slug={material.slug} />
             ) : (
-              <Button href="/contacts">Узнать, как получить</Button>
+              <PurchaseRequestForm slug={material.slug} />
             )}
           </div>
         </div>
